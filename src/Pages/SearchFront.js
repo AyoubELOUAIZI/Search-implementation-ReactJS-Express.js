@@ -5,6 +5,14 @@ import Table from '../components/Table';
 
 export const SearchFront = () => {
   const [input, setInput] = useState('');
+
+  const SearchResult = (Users)=>{
+    return Users.filter(user => user.first_name.toLowerCase().includes(input) ||
+      user.last_name.toLowerCase().includes(input) ||
+      user.email.toLowerCase().includes(input) ||
+      user.gender.toLowerCase().includes(input)
+    );
+  }
   //first v1
   // console.log(Users.filter(user=>user.first_name.toLowerCase().includes("fe")))
   // return (
@@ -29,13 +37,7 @@ export const SearchFront = () => {
       <h1>SearchFront</h1>
       <div>
         <input type="text" placeholder="Search ..." onChange={(e) => setInput(e.target.value)} />
-
-
-        <Table Users={Users.filter(user => user.first_name.toLowerCase().includes(input) ||
-          user.last_name.toLowerCase().includes(input) ||
-          user.email.toLowerCase().includes(input) ||
-          user.gender.toLowerCase().includes(input) 
-          )} />
+        <Table Users={SearchResult(Users)} />
       </div>
     </div>
   );
