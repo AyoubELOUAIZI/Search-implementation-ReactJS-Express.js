@@ -43,7 +43,7 @@ export const SearchFront = () => {
   //v2
   return (
     <div className="search-front">
-      <h1>SearchFront</h1>
+      <h1>SearchFront:Using only the client side</h1>
       <div>
         <input type="text" placeholder="Search ..." onChange={(e) => setInput(e.target.value)} />
         <Table Users={SearchResult(Users)} />

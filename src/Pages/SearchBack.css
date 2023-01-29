@@ -1,5 +1,9 @@
 .search-back{
-    background-color: blue;
+    background-color: rgb(18, 18, 71);
     color: aliceblue;
   
+}
+tr:hover{
+background-color:#fff;
+color: black;
 }
