@@ -1,4 +1,3 @@
-
 import './Table.css'
 const Table = ({ Users }) => {
     return (

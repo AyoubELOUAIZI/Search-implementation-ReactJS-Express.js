@@ -6,13 +6,22 @@ import Table from '../components/Table';
 export const SearchFront = () => {
   const [input, setInput] = useState('');
 
-  const SearchResult = (Users)=>{
-    return Users.filter(user => user.first_name.toLowerCase().includes(input) ||
-      user.last_name.toLowerCase().includes(input) ||
-      user.email.toLowerCase().includes(input) ||
-      user.gender.toLowerCase().includes(input)
+  // const SearchResult = (Users)=>{
+  //   return Users.filter(user => user.first_name.toLowerCase().includes(input) ||
+  //     user.last_name.toLowerCase().includes(input) ||
+  //     user.email.toLowerCase().includes(input) ||
+  //     user.gender.toLowerCase().includes(input)
+  //   );
+  //}
+
+  const keys = ["first_name", "last_name", "email","gender"];
+  const SearchResult = (Users) => {
+    return Users.filter((user) =>
+      keys.some((key) => user[key].toLowerCase().includes(input))
     );
   }
+ 
+
   //first v1
   // console.log(Users.filter(user=>user.first_name.toLowerCase().includes("fe")))
   // return (
